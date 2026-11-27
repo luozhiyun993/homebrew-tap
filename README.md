@@ -1,18 +1,30 @@
-# Luozhiyun993 Tap
+# luozhiyun993 Tap
 
-## How do I install these formulae?
+Homebrew tap for [Lockgate](https://github.com/luozhiyun993/lockgate).
 
-`brew install luozhiyun993/tap/<formula>`
+## Install
 
-Or `brew tap luozhiyun993/tap` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "luozhiyun993/tap"
-brew "<formula>"
+```sh
+brew install --cask luozhiyun993/tap/lockgate
 ```
 
-## Documentation
+Homebrew 7 and later only load third-party taps you have trusted. If the
+command above is refused, run this first:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```sh
+brew trust luozhiyun993/tap
+```
+
+Lockgate is ad-hoc signed and not notarized, so macOS blocks the first launch.
+To allow it:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/Lockgate.app
+```
+
+## Upgrade and uninstall
+
+```sh
+brew upgrade --cask lockgate
+brew uninstall --cask lockgate
+```
